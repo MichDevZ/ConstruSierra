@@ -26,12 +26,12 @@ const services = [
     {
         image: 'servicios.jpg',
         title: 'Servicios del hogar',
-        services: ['Fontaneria', 'Electricidad', 'Carpinteria de madera', 'Instalación de ventanas y puertas', 'Techos desmontables']
+        services: ['Fontaneria', 'Electricidad', 'Carpinteria y muebles', 'Instalación de ventanas y puertas', 'Techos desmontables']
     },
     {
         image: 'tejado.jpg',
         title: 'Tejados',
-        services: ['Tejados', 'Impermeabilización', 'Instalación de canalones y bajantes', 'Instalación de tejas', 'Panel sandwich y todo tipo de tejado', ]
+        services: ['Tejados', 'Impermeabilización', 'Instalación de canalones y bajantes', 'Instalación de tejas', 'Panel sandwich y todo tipo de tejado', 'Instalación de mamparas' ]
     },
     {
         image: 'interior.jpg',

@@ -1,7 +1,6 @@
 import { Box, Button, Card, CardActions, CardMedia, Grid, Typography } from '@mui/material'
 import { getAllProjects } from '../api/projects'
 import { UploadPhoto } from './UploadPhoto';
-import { unlink } from 'fs';
 import { DeletePhoto } from './DeletePhoto';
 
 const page = async () => {
