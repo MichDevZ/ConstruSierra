@@ -1,0 +1,5 @@
+[[redirects]]
+
+from = "/api/auth/callback/credentials"
+to = "/eduar"
+status = 200
