@@ -1,5 +1,4 @@
 [[redirects]]
-
-from = "/api/auth/callback/credentials"
-to = "/eduar"
-status = 200
+  from = "/api/*"
+  to = ".netlify/functions/:splat"
+  status = 200
