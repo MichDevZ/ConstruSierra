@@ -1,0 +1,6 @@
+export * from './Header'
+export * from './Title'
+export * from './Services'
+export * from './AboutUs'
+export * from './Projects'
+export * from './Footer'

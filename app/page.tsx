@@ -1,95 +1,64 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Fab } from "@mui/material";
+import { AboutUs, Footer, Header, Projects, Services, Title } from "./components/ui";
+import {  Email, WhatsApp } from "@mui/icons-material";
+import { getAllProjects } from "./api/projects";
+import type { Metadata } from 'next'
+import Link from "next/link";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Reformas Intregales Sierra',
+  description: 'Reformas Integrales en Madrid y en toda España',
+  keywords: ['Reformas', 
+  'Integrales', 'Sierra', 'Madrid', 'España', 'Baños', 'Cocina', 
+  'Fontaneria', 'Electricidad', 'Interiorismo', 'Baldur', 'Locales', 'Solado', 'Alicatado', 'Parquet',
+  'Impermeabilización', 'Techo'
+]
+}
+
+export default async function  Home() {
+
+  const images = await getAllProjects();
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+<>
+    <header>
+        <Header />
+    </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+    <main >
+      <Title />
+     <Link href={'https://wa.me/34641447238'} target="_blank">
+      <Fab
+        color="primary"
+        aria-label="add"
+        style={{ position: 'fixed', bottom: 16, right: 16, backgroundColor: '#25D366' }}
+      >
+        <WhatsApp />
+      </Fab>
+      </Link>
+      
+      <Link href={"https://mail.google.com/mail/?view=cm&fs=1&to=sierrafer.construdecor@gmail.com"} target="'_blank">
+      <Fab
+        color="primary"
+        aria-label="add"
+        style={{ position: 'fixed', bottom: 80, right: 16, backgroundColor: 'blue' }}
+      >
+        <Email />
+      </Fab>
+      </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <Services />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+      <AboutUs />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <Projects images={images} />
+      
     </main>
+
+    <footer>
+      <Footer />
+    </footer>
+    </>
   );
 }
