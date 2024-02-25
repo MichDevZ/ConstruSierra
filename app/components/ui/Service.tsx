@@ -31,7 +31,7 @@ export const Service: FC <Props> = ({service}) => {
   return (
           <>
           <motion.div key={service.title} ref={ref} animate={controls} initial={{opacity: 0, y: 20}} transition={{ease: 'easeInOut', duration: 2}}>
-          <Grid id={service.title} container ml={1} my={1} >
+          <Grid id={service.title} container  my={1} >
               
           <Image src={`/${service.image}`} alt={`${service.title}`} width={410} height={200} />
           
