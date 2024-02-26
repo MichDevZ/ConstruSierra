@@ -2,11 +2,21 @@ import { Box, Button, Card, CardActions, CardMedia, Grid, Typography } from '@mu
 import { getAllProjects } from '../api/projects'
 import { UploadPhoto } from './UploadPhoto';
 import { DeletePhoto } from './DeletePhoto';
+import { useRouter } from 'next/router';
+import { useSession } from 'next-auth/react';
 
 const page = async () => {
 
   const images = await getAllProjects();
+
+  const router = useRouter();
   
+  const {data} = useSession();
+
+  if (!data) {
+    router.replace('/')
+    return;
+  }
 
   return (
     <>
