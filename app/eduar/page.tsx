@@ -1,22 +1,19 @@
-import { Box, Button, Card, CardActions, CardMedia, Grid, Typography } from '@mui/material'
+import { Box, Card, CardActions, CardMedia, Grid, Typography } from '@mui/material'
 import { getAllProjects } from '../api/projects'
 import { UploadPhoto } from './UploadPhoto';
 import { DeletePhoto } from './DeletePhoto';
-import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
 
 const page = async () => {
 
   const images = await getAllProjects();
-
-  const router = useRouter();
   
-  const {data} = useSession();
+  const session = getServerSession();
 
-  if (!data) {
-    router.replace('/')
-    return;
-  }
+    if (!session) {
+        window.location.href = process.env.NEXTAUTH_URL!
+        return;
+    }
 
   return (
     <>
