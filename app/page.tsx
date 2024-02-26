@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  icons: 'logo.png',
   title: 'Reformas Intregales Sierra',
   description: 'Reformas Integrales en Madrid y en toda España',
   keywords: ['Reformas', 
