@@ -8,7 +8,7 @@ const page = async () => {
 
   const images = await getAllProjects();
   
-  const session = getServerSession();
+  const session = await getServerSession();
 
     if (!session) {
         window.location.href = process.env.NEXTAUTH_URL!
