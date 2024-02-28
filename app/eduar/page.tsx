@@ -4,6 +4,7 @@ import { UploadPhoto } from './UploadPhoto';
 import { DeletePhoto } from './DeletePhoto';
 import { getServerSession } from 'next-auth';
 
+
 const page = async () => {
 
   const images = await getAllProjects();
@@ -46,18 +47,18 @@ const page = async () => {
 
 
         {
-          images.map( img => (
-              <Grid key={img} item xs={3} md={1} mr={4}  > 
+          images.map((img: {img: string, url: string})  => (
+              <Grid key={img.url} item xs={3} md={1} mr={4}  > 
                     <Card>
                         <CardMedia 
                             component='img'
                             className='fadeIn'
-                            image={ `projects/${img}` }
-                            alt={ img }
+                            image={ `${img.url}` }
+                            alt={ img.url }
                             height={100}
                         />
                         <CardActions>
-                            <DeletePhoto img={img} />
+                            <DeletePhoto img={img.url} />
                         </CardActions>
                     </Card>
               </Grid>

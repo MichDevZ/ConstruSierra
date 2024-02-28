@@ -11,7 +11,11 @@ import { FC, useState } from 'react';
 
 
 interface Props {
-  images: string[]
+  images: Image[]
+}
+
+interface Image {
+  url: string;
 }
 
 
@@ -70,7 +74,7 @@ export const Projects: FC <Props> = ({images}) => {
                            initial={{ opacity: 0, x: 20 }}
                            animate={{ opacity: 1, x: 0 }}
                            transition={{ duration: 1 }}
-                        src={`/projects/${image}`} alt={'Proyecto'} width={200} height={50} style={{width: '100%', height: esMovil ? 250 : 500}}  />
+                        src={`${image.url}`} alt={'Proyecto'} width={200} height={50} style={{width: '100%', height: esMovil ? 250 : 500}}  />
                         </SwiperSlide>
                     ))
                 }
@@ -78,7 +82,7 @@ export const Projects: FC <Props> = ({images}) => {
 
                       {
                         images.map(image => (
-                            <Image key={image} className='gallery' src={`/projects/${image}`} alt={'Proyecto'} width={300} height={150}  />
+                            <Image key={image.url} className='gallery' src={`${image.url}` } alt={'Proyecto'} width={300} height={150}  />
                         )
                         )
                       }

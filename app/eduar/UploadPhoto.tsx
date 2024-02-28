@@ -23,6 +23,8 @@ export const UploadPhoto = () => {
                 formData.append('file', file);
                 const {data} = await axios.post<string>('api/images', formData);
 
+                console.log('Respuesta del servidor:', data);
+
                 if (data === 'Subida con éxito') {
                     router.refresh()
                 }
