@@ -1,4 +1,5 @@
 import {v2 as cloudinary} from 'cloudinary';
+import { NextResponse } from 'next/server';
           
 cloudinary.config({ 
   cloud_name: 'dy8xwij0y', 
@@ -7,9 +8,7 @@ cloudinary.config({
 });
 
 
-
-
-export async function POST (req: any) { 
+export async function POST (req: any, res: any) { 
 
   const formData = await req.formData();
   const file = formData.get("file")
@@ -19,19 +18,40 @@ export async function POST (req: any) {
   }
 
   const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes)
 
-  const result = await new Promise((resolve, reject) => {
-    cloudinary.uploader.upload_stream({}, (error, result) => {
-      if (error) {
-        reject(error)
-      }
-      resolve(result)
-    }).end(buffer)
+  var mime = file.type; 
+  var encoding = 'base64'; 
+  var base64Data = Buffer.from(bytes).toString('base64');
+  var fileUri = 'data:' + mime + ';' + encoding + ',' + base64Data;
+  
+  try {
+    
+    const uploadToCloudinary = () => {
+      return new Promise((resolve, reject) => {
 
-  })
+          var result = cloudinary.uploader.upload(fileUri, {
+            invalidate: true
+          })
+            .then((result) => {
+              console.log(result);
+              resolve(result);
+            })
+            .catch((error) => {
+              console.log(error);
+              reject(error);
+            });
+      });
+    };
 
-  return Response.json('Subida con éxito')
+    const result: any = await uploadToCloudinary();
+    
+    let imageUrl = result.secure_url;
+
+    return NextResponse.json('Subida con éxito');
+  } catch (error) {
+    console.log("server err", error);
+    return NextResponse.json({ err: "Internal Server Error" }, { status: 500 });
+  }
 
 }
 
@@ -49,7 +69,6 @@ export async function DELETE (req: any) {
     try {
       const [fileId, extension] = fileName.substring(fileName.lastIndexOf('/') + 1).split('.')
       const result = await cloudinary.uploader.destroy(fileId);
-      console.log(fileName)
           return Response.json('Imagen eliminada con éxito');
         } catch (error) {
             console.error('Error durante la eliminación de la imagen:', error);

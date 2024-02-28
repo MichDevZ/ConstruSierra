@@ -21,7 +21,11 @@ export const UploadPhoto = () => {
             for( const file of filesArray) {
                 const formData = new FormData();
                 formData.append('file', file);
-                const {data} = await axios.post<string>('api/images', formData);
+                const {data} = await axios.post<string>('api/images', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    }
+                });
 
                 console.log('Respuesta del servidor:', data);
 
@@ -31,7 +35,7 @@ export const UploadPhoto = () => {
             }
             
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
