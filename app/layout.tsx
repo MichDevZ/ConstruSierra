@@ -9,11 +9,6 @@ const jsonLD =
   "@context": "https://schema.org",
   "@type": "WebSite",
   "url": "https://www.construsierra.es",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "Reformas integrales en Madrid",
-    "query-input": "required name=search_term_string"
-  },
   "logo": "logo.png"
 }
 
