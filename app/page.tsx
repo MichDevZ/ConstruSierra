@@ -8,13 +8,28 @@ import Link from "next/link";
 export const metadata: Metadata = {
   icons: 'logo.png',
   title: 'Reformas Intregales Sierra',
-  description: 'Reformas Integrales en Madrid y en toda España',
+  description: 'Reformas Integrales en Madrid y en toda España, Empresa familiar con las mejores soluciones y la mejor calidad',
   keywords: ['Reformas', 
   'Integrales', 'Sierra', 'Madrid', 'España', 'Baños', 'Cocina', 
   'Fontaneria', 'Electricidad', 'Interiorismo', 'Baldur', 'Locales', 'Solado', 'Alicatado', 'Parquet',
-  'Impermeabilización', 'Techo'
-]
+  'Impermeabilización', 'Techo',
+],
+robots: 'index, follow',
 }
+
+const jsonLD = 
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.construsierra.es",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "Reformas integrales en Madrid",
+    "query-input": "required name=search_term_string"
+  },
+  "logo": "logo.png"
+}
+
 
 export default async function  Home() {
 
@@ -22,6 +37,10 @@ export default async function  Home() {
 
   return (
 <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+      />
     <header>
         <Header />
     </header>
