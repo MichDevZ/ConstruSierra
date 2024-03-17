@@ -8,8 +8,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   icons: 'logo.png',
   title: 'Reformas Intregales en Madrid | Reformas integrales Sierra',
-  description: 'Reformas Integrales en Madrid y en toda España, Empresa familiar con las mejores soluciones y la mejor calidad',
-  keywords: ['Reformas', 
+  description: 'Reformas Integrales en Madrid y en toda España, Reformas Integrales Sierra Empresa familiar con las mejores soluciones y la mejor calidad',
+  keywords: ['Reformas', "Reformas Integrales Madrid", 'Reformas Integrales Sierra', 'Reformas Integrales en Madrid',
   'Integrales', 'Sierra', 'Madrid', 'España', 'Baños', 'Cocina', 
   'Fontaneria', 'Electricidad', 'Interiorismo', 'Baldur', 'Locales', 'Solado', 'Alicatado', 'Parquet',
   'Impermeabilización', 'Techo',
@@ -53,11 +53,17 @@ export default async function  Home() {
       </Fab>
       </Link>
 
+      <section>
       <Services />
+      </section>
 
+      <section>
       <AboutUs />
+      </section>
 
+      <section>
       <Projects images={images} />
+      </section>
       
     </main>
 
