@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   icons: 'logo.png',
-  title: 'Reformas Intregales Sierra',
+  title: 'Reformas Intregales en Madrid',
   description: 'Reformas Integrales en Madrid y en toda España, Empresa familiar con las mejores soluciones y la mejor calidad',
   keywords: ['Reformas', 
   'Integrales', 'Sierra', 'Madrid', 'España', 'Baños', 'Cocina', 
