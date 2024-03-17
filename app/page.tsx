@@ -17,18 +17,7 @@ export const metadata: Metadata = {
 robots: 'index, follow',
 }
 
-const jsonLD = 
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://www.construsierra.es",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "Reformas integrales en Madrid",
-    "query-input": "required name=search_term_string"
-  },
-  "logo": "logo.png"
-}
+
 
 
 export default async function  Home() {
@@ -37,10 +26,6 @@ export default async function  Home() {
 
   return (
 <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
-      />
     <header>
         <Header />
     </header>
