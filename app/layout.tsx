@@ -9,7 +9,8 @@ const jsonLD =
   "@context": "https://schema.org",
   "@type": "WebSite",
   "url": "https://www.construsierra.es",
-  "logo": "logo.png"
+  "logo": "logo.png",
+  "name": 'Reformas Integrales Sierra'
 }
 
 export default function RootLayout({
