@@ -30,7 +30,7 @@ export const AboutUs = () => {
                   de pisos, locales comerciales y portales. Contamos también con servicios de electricidad, fontaneria.
                   <span style={{color: 'red', fontWeight: 'bold'}}> Y mucho más! </span> <br /> <br />
                   Puedes pedir tu presupuesto sin compromiso alguno. Escribenos a nuestro WhatsApp o a nuestro correo anclados
-                  en la página web! (Trabajamos en toda España) <br /> <br />
+                  en la página web! (Trabajamos en toda España) 
                   </Typography>
               </Box>
           </Grid>
