@@ -26,7 +26,7 @@ export const AboutUs = () => {
 
           <Grid item xs={12} md={8} my={3} bgcolor={'#F6F6F6'} textAlign={'center'} >
               <Box>
-                <Typography fontWeight={'bold'} padding={2}>Reformas Integrales en Parla y en toda España <br /><br /> Reformas Integrales Sierra empresa familiar ubicada en <span style={{color: 'red', fontWeight: 'bold'}} >Parla</span> <br /> Especializados en reformas integrales 
+                <Typography fontWeight={'bold'} padding={2}>Reformas Integrales en Palma de Mallorca y en toda España <br /><br /> Reformas Integrales Sierra empresa familiar ubicada en <span style={{color: 'red', fontWeight: 'bold'}} >Palma de Mallorca</span> <br /> Especializados en reformas integrales 
                   de pisos, locales comerciales y portales. Contamos también con servicios de electricidad, fontaneria.
                   <span style={{color: 'red', fontWeight: 'bold'}}> Y mucho más! </span> <br /> <br />
                   Puedes pedir tu presupuesto sin compromiso alguno. Escribenos a nuestro WhatsApp o a nuestro correo anclados

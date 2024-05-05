@@ -10,7 +10,7 @@ const jsonLD =
   "@type": "WebSite",
   url: "https://www.construsierra.es",
   logo: "logo.png",
-  name: 'Reformas Integrales en Parla | Reformas Integrales Sierra'
+  name: 'Reformas Integrales en Palma de Mallorca | Reformas Integrales Sierra'
 }
 
 export default function RootLayout({

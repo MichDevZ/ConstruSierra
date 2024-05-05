@@ -7,10 +7,10 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   icons: 'logo.png',
-  title: 'Reformas Integrales en Parla | Reformas Integrales Sierra',
-  description: 'Reformas Integrales en Parla y en toda España, Reformas Integrales Sierra Empresa familiar con las mejores soluciones y la mejor calidad',
-  keywords: ['Reformas', "Reformas Integrales Parla", 'Reformas Integrales Sierra', 'Reformas Integrales en Parla',
-  'Integrales', 'Sierra', 'Parla', 'España', 'Baños', 'Cocina', 
+  title: 'Reformas Integrales en Palma de Mallorca | Reformas Integrales Sierra',
+  description: 'Reformas Integrales en Palma de Mallorca y en toda España, Reformas Integrales Sierra Empresa familiar con las mejores soluciones y la mejor calidad',
+  keywords: ['Reformas', "Reformas Integrales Palma de Mallorca", 'Reformas Integrales Sierra', 'Reformas Integrales en Palma de Mallorca',
+  'Integrales', 'Sierra', 'Palma de Mallorca', 'España', 'Baños', 'Cocina', 
   'Fontaneria', 'Electricidad', 'Interiorismo', 'Baldur', 'Locales', 'Solado', 'Alicatado', 'Parquet',
   'Impermeabilización', 'Techo',
 ],
