@@ -43,12 +43,12 @@ export default async function  Home() {
       </Fab>
       </Link>
       
-      <Link href={"https://mail.google.com/mail/?view=cm&fs=1&to=sierrafer.construdecor@gmail.com"} target="'_blank">
-      <Fab
-        color="primary"
-        aria-label="add"
-        style={{ position: 'fixed', bottom: 80, right: 16, backgroundColor: 'blue' }}
-      >
+        <Link href={"https://mail.google.com/mail/?view=cm&fs=1&to=sierrafer.construdecor@gmail.com"} target="_blank">
+        <Fab
+          color="primary"
+          aria-label="add"
+          style={{ position: 'fixed', bottom: 80, right: 16, backgroundColor: 'blue' }}
+        >
         <Email />
       </Fab>
       </Link>
